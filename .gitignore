@@ -25,6 +25,7 @@ TestResults
 *.pdb
 *.png
 *.ucls
+*.class
 
 build
 *.pbxuser
