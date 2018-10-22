@@ -1,7 +1,6 @@
 package br.com.namom.todolist.domain;
 
 import java.io.Serializable;
-import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,7 +11,7 @@ import lombok.Data;
 
 @Entity
 @Data
-public class List implements Serializable {
+public class ListDomain implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -21,7 +20,5 @@ public class List implements Serializable {
 	private Long id;
 
 	private String name;
-
-	private Date creationDate;
 
 }
