@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import br.com.namom.todolist.domain.ListDomain;
 
-public interface Lists extends JpaRepository<ListDomain, Long> {
+public interface ListRepository extends JpaRepository<ListDomain, Long> {
 
 }

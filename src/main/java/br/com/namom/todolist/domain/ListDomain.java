@@ -12,7 +12,6 @@ import lombok.Data;
 @Entity
 @Data
 public class ListDomain implements Serializable {
-
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -20,5 +19,12 @@ public class ListDomain implements Serializable {
 	private Long id;
 
 	private String name;
+
+	public ListDomain(String name) {
+		this.name = name;
+	}
+	
+	public ListDomain() {
+	}
 
 }
