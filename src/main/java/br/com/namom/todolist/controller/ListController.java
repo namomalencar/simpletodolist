@@ -26,6 +26,11 @@ public class ListController {
 
 		return "lists";
 	}
+	
+	@RequestMapping("")
+	public String index(Model model) {
+		return "index";
+	}
 
 	@Transactional
 	@RequestMapping(value = "save", method = RequestMethod.POST)
