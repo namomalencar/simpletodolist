@@ -17,19 +17,18 @@ public class ListController {
 
 	@Autowired
 	private ListRepository repoList;
-
-	@RequestMapping("mylists")
-	public String lists(Model model) {
-
-		Iterable<ListDomain> lists = repoList.findAll();
-		model.addAttribute("lists", lists);
-
-		return "lists";
-	}
 	
 	@RequestMapping("")
 	public String index(Model model) {
 		return "index";
+	}
+	
+	@Transactional
+	@RequestMapping("mylists")
+	public String lists(Model model) {
+		Iterable<ListDomain> lists = repoList.findAll();
+		model.addAttribute("lists", lists);
+		return "lists";
 	}
 
 	@Transactional
