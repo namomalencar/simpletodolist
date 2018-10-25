@@ -10,70 +10,79 @@
 <title>Simple to do list</title>
 
 <!-- Bootstrap core CSS -->
-<link href="../../bootstrap-4.0.0/dist/css/bootstrap.min.css"
-	rel="stylesheet">
+<link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <!-- Custom styles for this template -->
 <link href="../../css/mylist.css" rel="stylesheet">
 
 </head>
 
 <body class="text-center">
-	<div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
-		<header class="masthead mb-auto">
-			<div class="inner">
-				<h2 class="masthead-brand">Welcome to my to-do list</h2>
-				<nav class="nav nav-masthead">
-					<a class="nav-link active" href="../">Home</a>
-				</nav>
+	<div class="container">
+		<div class="row justify-content-md-center">
+			<header class="masthead col-md-8">
+				<div class="inner">
+					<div class="col col-md-auto">
+						<h2 class="masthead-brand">Welcome to my to-do list</h2>
+					</div>
+					<div class="col col-md-auto">
+						<nav class="nav nav-masthead">
+							<a class="nav-link active" href="../">Home</a>
+						</nav>
+					</div>
+				</div>
+			</header>
+		</div>
+
+		<div class="row justify-content-md-center">
+			<div class="masthead col-md-8">
+				<form action="savelist" method="post">
+					<div class="form-group">
+						<h3 class="cover-heading">New List</h3>
+						<input type="text" class="form-control" id="name" name="name"
+							placeholder="List Name" />
+					</div>
+					<button type="submit" class="btn btn-lg btn-success">Create</button>
+				</form>
 			</div>
-		</header>
+		</div>
+		<div class="row justify-content-md-center">
+			<h3 class="cover-heading">My Lists</h3>
+		</div>
+		<div class="row justify-content-md-center">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">List name</th>
+						<th scope="col">Date</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="contato: ${lists}">
+						<td scope="row" th:text="${contato.id}"></td>
+						<td th:text="${contato.name}"></td>
+						<td th:text="${#dates.format(contato.date, 'dd-MM-yyyy HH:mm')}"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 
-		<main role="main" class="inner cover">
-		<form action="save" method="post">
-			<div class="form-group">
-				<h3 class="cover-heading">New List</h3>
-				<input type="text" class="form-control" id="name" name="name" placeholder="My Name" />
-			</div>
-			<button type="submit" class="btn btn-lg btn-success">Save</button>
-		</form>
-
-		<table>
-			<thead>
-				<tr>
-					<th>#</th>
-					<th>Nome</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr th:each="contato: ${lists}">
-					<td th:text="${contato.id}"></td>
-					<td th:text="${contato.name}"></td>
-				</tr>
-			</tbody>
-		</table>
-
-		</main>
-
-		<footer class="mastfoot mt-auto">
-			<div class="inner">
-				<p>
-					See the code on my <a
-						href="https://github.com/namomalencar/simpletodolist">github</a>.
-				</p>
-			</div>
-		</footer>
+		<div class="row justify-content-md-center">
+			<footer class="mastfoot mt-auto">
+				<div class="inner">
+					<p>
+						See the code on my <a
+							href="https://github.com/namomalencar/simpletodolist">github</a>.
+					</p>
+				</div>
+			</footer>
+		</div>
 	</div>
 
 
 	<!-- Bootstrap core JavaScript -->
 	<!-- Placed at the end of the document so the pages load faster -->
 	<script src="../../jquery/jquery-3.2.1.slim.min.js"></script>
-	<script>
-		window.jQuery
-				|| document
-						.write('<script src="../../bootstrap-4.0.0/assets/js/vendor/jquery-slim.min.js"><\/script>')
-	</script>
-	<script src="../../bootstrap-4.0.0/assets/js/vendor/popper.min.js"></script>
-	<script src="../../bootstrap-4.0.0/dist/js/bootstrap.min.js"></script>
+	<script src="../../bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>

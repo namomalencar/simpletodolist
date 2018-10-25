@@ -33,14 +33,11 @@ public class ListController {
 	}
 
 	@Transactional
-	@RequestMapping(value = "save", method = RequestMethod.POST)
+	@RequestMapping(value = "savelist", method = RequestMethod.POST)
 	public String save(@RequestParam("name") String name, Model model) {
 		ListDomain list = new ListDomain(name);
 		repoList.save(list);
-
-		Iterable<ListDomain> lists = repoList.findAll();
-		model.addAttribute("lists", lists);
-		return "lists";
+		return this.lists(model);
 	}
 
 }

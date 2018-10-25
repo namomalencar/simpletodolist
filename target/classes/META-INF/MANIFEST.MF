@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Implementation-Title: To do List
 Implementation-Version: 1.0.0-00
-Built-By: ter00944
+Built-By: namom
 Implementation-Vendor-Id: br.com.namom.todolist
-Build-Jdk: 1.8.0_171
+Build-Jdk: 1.8.0_181
 Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
  ot-starter-parent/todolist
 Created-By: Maven Integration for Eclipse

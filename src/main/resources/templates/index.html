@@ -10,53 +10,62 @@
 <title>Simple to do list</title>
 
 <!-- Bootstrap core CSS -->
-<link href="../../bootstrap-4.0.0/dist/css/bootstrap.min.css"
-	rel="stylesheet">
+<link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <!-- Custom styles for this template -->
 <link href="../../css/mylist.css" rel="stylesheet">
 
 </head>
 
+
 <body class="text-center">
+	<div class="container">
+		<div class="row justify-content-md-center">
+			<header class="masthead col-md-8">
+				<div class="inner">
+					<div class="col col-md-auto">
+						<h2 class="masthead-brand">Welcome to my to-do list</h2>
+					</div>
+					<div class="col col-md-auto">
+						<nav class="nav nav-masthead">
+							<a class="nav-link active" href="../">Home</a>
+						</nav>
+					</div>
+				</div>
+			</header>
+		</div>
 
-	<div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
-		<header class="masthead mb-auto">
-			<div class="inner">
-				<h2 class="masthead-brand">Welcome to my to-do list</h2>
-				<nav class="nav nav-masthead">
-					<a class="nav-link active" href="../">Home</a>
-				</nav>
-			</div>
-		</header>
 
-		<main role="main" class="inner cover">
-		<h1 class="cover-heading">My list</h1>
-		<p class="lead">My list is a simple to-do list and task manager that helps you get stuff done. Whether you’re sharing a grocery list with a loved one, working on a project, or planning a vacation.</p>
-		<p class="lead">
-			<a href="./mylists" class="btn btn-lg btn-secondary">Show Lists</a>
-		</p>
-		</main>
+		<div class="row justify-content-md-center">
+			<h1 class="cover-heading">My list</h1>
+		</div>
+		<div class="row justify-content-md-center">
+			<p class="lead">My list is a simple to-do list and task manager
+				that helps you get stuff done.</p>
+			<p class="lead">Whether you’re sharing a grocery list with a
+				loved one, working on a project, or planning a vacation.</p>
+		</div>
+		<div class="row justify-content-md-center">
+			<p class="lead">
+				<a href="./mylists" class="btn btn-lg btn-secondary">Show Lists</a>
+			</p>
+		</div>
 
-		<footer class="mastfoot mt-auto">
-			<div class="inner">
-				<p>
-					See the code on my <a
-						href="https://github.com/namomalencar/simpletodolist">github</a>.
-				</p>
-			</div>
-		</footer>
+		<div class="row justify-content-md-center">
+			<footer class="mastfoot mt-auto">
+				<div class="inner">
+					<p>
+						See the code on my <a
+							href="https://github.com/namomalencar/simpletodolist">github</a>.
+					</p>
+				</div>
+			</footer>
+		</div>
 	</div>
 
 
 	<!-- Bootstrap core JavaScript -->
 	<!-- Placed at the end of the document so the pages load faster -->
 	<script src="../../jquery/jquery-3.2.1.slim.min.js"></script>
-	<script>
-		window.jQuery
-				|| document
-						.write('<script src="../../bootstrap-4.0.0/assets/js/vendor/jquery-slim.min.js"><\/script>')
-	</script>
-	<script src="../../bootstrap-4.0.0/assets/js/vendor/popper.min.js"></script>
-	<script src="../../bootstrap-4.0.0/dist/js/bootstrap.min.js"></script>
+	<script src="../../bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -21,10 +21,11 @@ public class ListDomain implements Serializable {
 
 	private String name;
 	
-	private Date creationDate;
+	private Date date;
 
 	public ListDomain(String name) {
 		this.name = name;
+		this.date = new Date();
 	}
 	
 	public ListDomain() {
