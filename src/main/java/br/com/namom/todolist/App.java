@@ -7,6 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class App {
 	public static void main(String[] args) {
 		SpringApplication.run(App.class, args);
-		//Spring Boot (Building a web application - Running) - Part 2
+		//Spring Boot (Building a web application - JPA integration) - Part 3 
 	}
 }
