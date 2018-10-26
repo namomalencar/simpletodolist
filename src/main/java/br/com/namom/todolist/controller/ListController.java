@@ -28,7 +28,7 @@ public class ListController {
 	public String lists(Model model) {
 		Iterable<ListDomain> lists = repoList.findAll();
 		model.addAttribute("lists", lists);
-		return "lists";
+		return "mylists";
 	}
 
 	@Transactional

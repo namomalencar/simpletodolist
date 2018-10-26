@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description"
+	content="Simple to do list, making the life easier">
+<meta name="author" content="Namom Alencar">
+<title>Simple to do list</title>
+
+<!-- Bootstrap core CSS -->
+<link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="../../css/mylist.css" rel="stylesheet">
+
+</head>
+
+<body class="text-center">
+	<div class="container">
+		<div class="row justify-content-md-center">
+			<header class="masthead col-md-8">
+				<div class="inner">
+					<div class="col col-md-auto">
+						<h2 class="masthead-brand">Welcome to my to-do list</h2>
+					</div>
+					<div class="col col-md-auto">
+						<nav class="nav nav-masthead">
+							<a class="nav-link active" href="../">Home</a>
+						</nav>
+					</div>
+				</div>
+			</header>
+		</div>
+
+		<div class="row justify-content-md-center">
+			<div class="masthead col-md-8">
+				<form action="savelist" method="post">
+					<div class="form-group">
+						<h3 class="cover-heading">New List</h3>
+						<input type="text" class="form-control" id="name" name="name"
+							placeholder="List Name" />
+					</div>
+					<button type="submit" class="btn btn-lg btn-success">Create</button>
+				</form>
+			</div>
+		</div>
+		<div class="row justify-content-md-center">
+			<h3 class="cover-heading">My Lists</h3>
+		</div>
+		<div class="row justify-content-md-center">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">List name</th>
+						<th scope="col">Date</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="mylist: ${lists}">
+						<td scope="row" th:text="${mylist.id}"></td>
+						<td><a th:href="@{'/list/'+${mylist.id}}"><span th:text="${mylist.name}"></span></a></td>
+						<td th:text="${#dates.format(mylist.date, 'dd-MM-yyyy HH:mm')}"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="row justify-content-md-center">
+			<footer class="mastfoot mt-auto">
+				<div class="inner">
+					<p>
+						See the code on my <a
+							href="https://github.com/namomalencar/simpletodolist">github</a>.
+					</p>
+				</div>
+			</footer>
+		</div>
+	</div>
+
+
+	<!-- Bootstrap core JavaScript -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="../../jquery/jquery-3.2.1.slim.min.js"></script>
+	<script src="../../bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

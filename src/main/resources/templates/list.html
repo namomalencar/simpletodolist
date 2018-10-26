@@ -34,14 +34,20 @@
 		</div>
 
 		<div class="row justify-content-md-center">
+			<h1 th:text="${mylist.name}"></h1>
+		</div>
+
+		<div class="row justify-content-md-center">
 			<div class="masthead col-md-8">
-				<form action="savelist" method="post">
+				<form action="../savetask" method="post">
 					<div class="form-group">
-						<h3 class="cover-heading">New List</h3>
-						<input type="text" class="form-control" id="name" name="name"
-							placeholder="List Name" />
+						<h5 class="cover-heading">New Task</h5>
+						<input type="text" class="form-control" id="taskName"
+							name="taskName" placeholder="Task Name" /> 
+						<input type="hidden" id="idList" th:value="${mylist.id}"
+							 name="idList" />
 					</div>
-					<button type="submit" class="btn btn-lg btn-success">Create</button>
+					<button type="submit" class="btn btn-lg btn-success">Save</button>
 				</form>
 			</div>
 		</div>
@@ -53,15 +59,15 @@
 				<thead>
 					<tr>
 						<th scope="col">#</th>
-						<th scope="col">List name</th>
+						<th scope="col">Task name</th>
 						<th scope="col">Date</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr th:each="contato: ${lists}">
-						<td scope="row" th:text="${contato.id}"></td>
-						<td th:text="${contato.name}"></td>
-						<td th:text="${#dates.format(contato.date, 'dd-MM-yyyy HH:mm')}"></td>
+					<tr th:each="task: ${mytasks}">
+						<td scope="row" th:text="${task.id}"></td>
+						<td th:text="${task.name}"></td>
+						<td th:text="${#dates.format(task.date, 'dd-MM-yyyy HH:mm')}"></td>
 					</tr>
 				</tbody>
 			</table>
