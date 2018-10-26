@@ -43,9 +43,8 @@
 					<div class="form-group">
 						<h5 class="cover-heading">New Task</h5>
 						<input type="text" class="form-control" id="taskName"
-							name="taskName" placeholder="Task Name" /> 
-						<input type="hidden" id="idList" th:value="${mylist.id}"
-							 name="idList" />
+							name="taskName" placeholder="Task Name" /> <input type="hidden"
+							id="idList" th:value="${mylist.id}" name="idList" />
 					</div>
 					<button type="submit" class="btn btn-lg btn-success">Save</button>
 				</form>
@@ -71,6 +70,11 @@
 					</tr>
 				</tbody>
 			</table>
+			<div class="col col-md-auto">
+				<nav class="nav nav-masthead">
+					<a class="nav-link active" href="../">Voltar</a>
+				</nav>
+			</div>
 		</div>
 
 		<div class="row justify-content-md-center">
