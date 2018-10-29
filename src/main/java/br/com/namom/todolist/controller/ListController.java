@@ -17,12 +17,16 @@ public class ListController {
 
 	@Autowired
 	private ListRepository repoList;
-	
+
+	public ListController(ListRepository repoList) {
+		this.repoList = repoList;
+	}
+
 	@RequestMapping("")
 	public String index(Model model) {
 		return "index";
 	}
-	
+
 	@Transactional
 	@RequestMapping("mylists")
 	public String lists(Model model) {
@@ -34,9 +38,18 @@ public class ListController {
 	@Transactional
 	@RequestMapping(value = "savelist", method = RequestMethod.POST)
 	public String save(@RequestParam("name") String name, Model model) {
+		
+		//Validate Name Error
+		if (name == null || name.isEmpty()) {
+			throw new RuntimeException("List name cannot be empty or null");
+		}
+		
 		ListDomain list = new ListDomain(name);
+		
 		repoList.save(list);
 		return this.lists(model);
 	}
+
+
 
 }
