@@ -5,7 +5,9 @@ Simple To Do List
 
 Simple To Do List is a part of a project of life. I always wanted to share my knologments with people who likes to learn technology.
 
-Then, I started to [blog](https://steemit.com/spring/@namom/). :)
+Then, I started to [blog](https://steemit.com/@namom).
+
+:)
 
 If you have any considerations, please, be my guest.
 
