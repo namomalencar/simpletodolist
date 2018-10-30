@@ -57,7 +57,7 @@ public class ListControllerTest {
 	}
 	
 	@Test
-	public void shouldNotSaveANewListWhenNullName() {
+	public void shouldNotSaveANewListWhenNameIsNull() {
 		// scenario
 		String listName = null;
 		thrown.expect(Exception.class);

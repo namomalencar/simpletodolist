@@ -12,6 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import lombok.Data;
 
@@ -25,6 +26,7 @@ public class ListDomain implements Serializable {
 	private Long id;
 
 	@NotNull
+	@Size(min=2,max=255)
 	@Column(unique = true)
 	private String name;
 

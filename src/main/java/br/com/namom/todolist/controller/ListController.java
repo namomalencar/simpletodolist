@@ -38,18 +38,19 @@ public class ListController {
 	@Transactional
 	@RequestMapping(value = "savelist", method = RequestMethod.POST)
 	public String save(@RequestParam("name") String name, Model model) {
-		
-		//Validate Name Error
+
+		// Validate Name Error
 		if (name == null || name.isEmpty()) {
 			throw new RuntimeException("List name cannot be empty or null");
 		}
-		
+
 		ListDomain list = new ListDomain(name);
-		
+
 		repoList.save(list);
+
 		return this.lists(model);
 	}
-
-
+	
+	
 
 }
